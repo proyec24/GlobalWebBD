@@ -1,0 +1,123 @@
+.local{
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+}
+.login-box {
+    position: flex;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    padding: 40px;
+    background: #393360;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  .login-box img{
+    max-width: 500px;
+  }
+  .login-box li{
+    color: #ffffff;
+    font-size: 18px;
+  }
+  .container { 
+    margin-top: 50px;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+  }
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+  }
+.pedido:hover{
+    background:#9AB87A;
+    color: #fff;
+    border-radius: 5px;
+}
+  .login-box .user-box {
+    position: relative;
+  }
+  
+  .login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .login-box .user-box input:focus ~ label,
+  .login-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #ffffff;
+    font-size: 12px;
+  }
+  label{
+    top: -20px;
+    left: 0;
+    color: #ffffff;
+    font-size: 18px;
+  }
+  .login-box button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #000000;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+  }
+  
+  .login-box .button:hover {
+    background: #cd5d47;
+    color: #fff;
+    border-radius: 5px;
+  }
+  
+  .login-box .button span {
+    position: absolute;
+    display: block;
+  }
+  
+  .alert-danger{
+    color: rgb(124, 140, 226);
+    bottom: 10px;
+  }
+  select {
+    background-color:#464655;
+    color: white;
+    padding: 12px;
+    margin-bottom: 10px;
+    width: 250px;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+  }
+  

@@ -1,0 +1,41 @@
+<div class="login-box">
+  <form [formGroup]="form">
+    <h2>Iniciar Sesion</h2>
+    <div class="user-box">
+      <input type="text" name="correo" required formControlName="correo" />
+      <label>Correo</label>
+      <div
+        *ngIf="f['correo'].touched && f['correo'].invalid"
+        class="alert-danger"
+      >
+        <div *ngIf="f['correo'].errors && f['correo'].errors['required']">
+          Se necesita un correo.
+        </div>
+        <div *ngIf="f['correo'].errors && f['correo'].errors['email']">
+          Por favor, ingresa un correo valido.
+        </div>
+      </div>
+    </div>
+    <div class="user-box">
+      <input type="password" name="" required formControlName="contrasena" />
+      <label>Contraseña</label>
+      <div
+        *ngIf="f['contrasena'].touched && f['contrasena'].invalid"
+        class="alert alert-danger"
+      >
+        <div
+          *ngIf="f['contrasena'].errors && f['contrasena'].errors['required']"
+        >
+          Contraseña es requerida.
+        </div>
+      </div>
+    </div>
+    <button [disabled]="form.invalid" (click)="login()">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Entrar <i class="fa-solid fa-angle-right"></i>
+    </button>
+  </form>
+</div>

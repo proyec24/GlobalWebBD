@@ -1,0 +1,118 @@
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5;
+}
+a{
+    text-decoration: none;
+}
+.container2{
+    margin-top: 20px;
+}
+h1{
+    text-align: center;
+    color:white;
+}
+.abue{
+    top:50%;
+}
+.padre{
+    /*IMPORTANTE*/
+    top:50%;
+    display: flex;
+    justify-content: center;
+}
+.container{
+    margin-top:50px;
+    width: 1600px;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.row{
+    display:flex;
+
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card{
+    margin: 10px 10px;
+    background: rgb(201, 195, 195);
+    box-shadow: 0 0 15px rgba(0,0,.0,0.4);
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    align-self: normal;
+    flex-direction: column;
+    align-items: center;
+}
+.card img{
+    width: 300px;
+}
+.card h4{
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+.card p{
+    margin-bottom: 10px;
+}
+
+.card .btn{
+    display: inline-block;
+    margin-top: auto;
+    background: green;
+    color:#fff;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px ;
+    -ms-border-radius:5px;
+    -o-border-radius:5px ;
+}
+.card .btn{
+    display: inline-block;
+    margin-top: auto;
+    background: green;
+    color:#fff;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px ;
+    -ms-border-radius:5px;
+    -o-border-radius:5px ;
+}
+
+.card .btn-delete{
+    display: inline-block;
+    margin-top: auto;
+    background: rgb(163, 13, 13);
+    color:#fff;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px ;
+    -ms-border-radius:5px;
+    -o-border-radius:5px ;
+    margin-left: 2px;
+}
+.card .btn-update{
+    display: inline-block;
+    margin-top: auto;
+    background: rgb(12, 119, 177);
+    color:#fff;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px ;
+    -ms-border-radius:5px;
+    -o-border-radius:5px ;
+    margin-left: 2px;
+}

@@ -1,0 +1,39 @@
+<div class="abue">
+  <div class="padre">
+    <div class="container2">
+      <h1>Productos</h1>
+    </div>
+  </div>
+  <div class="padre">
+    <div class="container2">
+      <mat-form-field>
+        <mat-label>Nombre del Tennis</mat-label>
+        <input
+          matInput
+          placeholder="Ingrese el nombre del tenis"
+          [(ngModel)]="user"
+        />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="padre">
+    <div class="container">
+      <div class="row" *ngFor="let item of articulosArray | nombre: user">
+        <div class="card">
+          <img src="{{ item.imagen }}" alt="" />
+          <h4>{{ item.nombre }}</h4>
+          <p><b>Modelo: </b>{{ item.modelo }}</p>
+          <p><b>Marca: </b>{{ item.marca }}</p>
+          <p><b>Precio: </b>{{ item.precio | currency: "MXN":"symbol" }}</p>
+          <a (click)="go(item.id_articulo)" class="btn">Ver mas</a>
+          <a class="btn-delete" *ngIf="admin" (click)="delete(item.id_articulo)"
+            >Eliminar</a
+          >
+          <a class="btn-update" *ngIf="admin" (click)="update(item.id_articulo)"
+            >Actualizar</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

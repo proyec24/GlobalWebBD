@@ -1,0 +1,35 @@
+<div class="container" *ngIf="expression">
+  <div class="login-box">
+    <h2>Carrito</h2>
+    <div *ngFor="let item of resp">
+      <h2>{{ resp.nombre }}</h2>
+      <img src="{{ item.imagen }}" />
+      <ul>
+        <li>Disponibles: {{ item.stock }}</li>
+        <li>Modelo: {{ item.modelo }}</li>
+        <li>Marca: {{ item.marca }}</li>
+        <li>Talla: {{ item.talla }} cm</li>
+        <li>Precio: {{ item.precio | currency: "MXN" }}</li>
+      </ul>
+      <button class="button" (click)="delete(item.id_seleccion)">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Eliminar <i class="fa-solid fa-trash"></i>
+      </button>
+      <br />
+      <hr />
+    </div>
+    <div>
+      <label>Total: {{ total | currency: "MXN" }}</label>
+    </div>
+    <button class="pedido" *ngIf="total != 0" (click)="pedido()">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Realizar pedido <i class="fa-solid fa-check"></i>
+    </button>
+  </div>
+</div>
