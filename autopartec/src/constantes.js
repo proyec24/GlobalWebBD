@@ -1,0 +1,1 @@
+export const  API_ROUTE = "http://localhost/GlobalWeb/backend/restApiPHP/";

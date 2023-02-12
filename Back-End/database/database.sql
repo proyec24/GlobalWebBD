@@ -1,5 +1,6 @@
-create database yoguistore;
-use yoguistore;
+drop database Autopartec;
+create database Autopartec;
+use Autopartec;
 
 create table tipo_usuario(
     id_tipo_usuario int auto_increment,
@@ -8,8 +9,7 @@ create table tipo_usuario(
 );
 insert into tipo_usuario   values 
 (1,'Administrador'),
-(2,'Empleado'),
-(3,'Usuario');
+(2,'Usuario');
 describe tipo_usuario;
 select * from tipo_usuario;
 create table usuario(
@@ -25,9 +25,8 @@ create table usuario(
 );
 describe usuario;
 insert into usuario value 
-(1,'12345','admin@admin.com','Gonzalez','Cortes','Hector Josue',1);
+(1,'pepe','support@autopartec.com','Luevanos','Torres','Christofer Giovanny',1);
 select * from usuario;
-delete from info_usuario where id_info_usuario!=1;
 create table info_usuario(
     id_info_usuario int    auto_increment,
     estado varchar(30) not null,
@@ -41,7 +40,7 @@ create table info_usuario(
 );
 desc info_usuario;
 insert into info_usuario value 
-(1,"Jalisco","circunvalacion",123,"Oblatos",44700,1);
+(1,"Jalisco","Santa Martha ",126,"Santa Margarita",45140,1);
 select * from info_usuario;
 create table marca(
     id_marca int auto_increment,
@@ -50,43 +49,21 @@ create table marca(
 );
 desc marca;
 insert into marca()   values 
-(1,"Vans"),
-(2,"Puma"),
-(3,"Converse"),
-(4,"Nike"),
-(5,"Adidas");
+(1,"Ferrari"),
+(2,"Good Year"),
+(3,"Hella"),
+(4,"Grupo Loyga"),
+(5,"Autozone");
 select * from marca;
 create table modelo(
     id_modelo int auto_increment,
     modelo varchar(30) not null,
     primary key(id_modelo)
 );
-desc modelo;
-insert into modelo(modelo)   values 
-("Casuales"),
-("deportivos");
-
+insert into modelo  values 
+(1,"I3-EOLC"),
+(2,"BZ-DELP");
 select * from modelo;
-
-create table talla(
-    id_talla int auto_increment,
-    talla varchar(30),
-    primary key(id_talla)
-);
-insert talla (talla) values ('24'),
-('24.5'),
-('25'),
-('25.5'),
-('26'),
-('26.5'),
-('27'),
-('27.5'),
-('28'),
-('28.5'),
-('29'),
-('29.5'),
- ('30');
- select * from talla;
 create table articulo(
     id_articulo int auto_increment,
     id_modelo int not null,
@@ -98,8 +75,7 @@ create table articulo(
     precio decimal not null,
     primary key(id_articulo),
     foreign key(id_modelo) references modelo(id_modelo) on delete cascade on update cascade,
-    foreign key(id_marca) references marca(id_marca) on delete cascade on update cascade,
-    foreign key(id_talla) references talla(id_talla) on delete cascade on update cascade
+    foreign key(id_marca) references marca(id_marca) on delete cascade on update cascade
 );
 select * from articulo;
 create table estatus(
@@ -107,13 +83,11 @@ create table estatus(
     estatus varchar(12) not null,
     primary key(id_estatus)
 );
- desc estatus;
- insert into estatus(estatus) values 
- ("Entregado"),
- ("Recoger");
- 
- select * from estatus;
- 
+desc estatus;
+insert into estatus values 
+(1,"Finalizado"),
+(2,"En circulacion");
+select * from estatus;
 create table pedido(
     id_pedido int auto_increment,
     id_usuario int not null,
@@ -158,9 +132,9 @@ create table articulo_carrito(
 );
 
 SELECT * FROM usuario u INNER JOIN tipo_usuario t WHERE u.id_tipo_usuario = t.id_tipo_usuario and u.id_usuario=1;
-SELECT * FROM articulo a INNER JOIN modelo m ON m.id_modelo=a.id_modelo INNER JOIN marca mr ON mr.id_marca=a.id_marca INNER JOIN talla t ON t.id_talla=a.id_talla WHERE a.id_articulo=1;
+SELECT * FROM articulo a INNER JOIN modelo m ON m.id_modelo=a.id_modelo INNER JOIN marca mr ON mr.id_marca=a.id_marca  WHERE a.id_articulo=1;
 alter table articulo modify imagen varchar(512);
 alter table pedido modify precio_total float;
-delete from detalle_pedido where precio_total=5000;
+delete from detalle_pedido where  no_orden=(select id_pedido from pedido where precio_total=5000);
 update  pedido set id_estatus=2;
 SELECT * FROM pedido p inner join detalle_pedido d on p.id_pedido=d.no_orden inner join articulo a on a.id_articulo=d.id_articulo where p.id_estatus=1 order by p.fecha_pedido desc ;

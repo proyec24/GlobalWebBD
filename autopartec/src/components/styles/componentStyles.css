@@ -1,0 +1,62 @@
+/*Header*/
+.header-container{
+    width: 100%;
+    height: 50px;
+    background-color: tomato;
+    display: flex;
+    position: sticky;
+}
+.header-search{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.header-input{
+    border-radius: 12px 0px 0px 12px;
+    border: none;
+    width: 60%;
+    height: 60%;
+}
+.header-button{
+    width: 15%;
+    height: 64%;
+    border-radius: 0px 12px 12px 0px;
+    border: none;
+    border-left: 1px gray solid;
+    background-color: white;  
+    
+}
+.header-button img{
+    width: 40%;
+    object-fit:fill;
+}
+.header-tittle{
+    width:  20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-tittle p{
+    color: white;
+}
+.header-menu{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-item{
+    margin-left: 10%;
+    color: white;
+    text-decoration: none;
+}
+.header-item:hover{
+    cursor: pointer;
+    -moz-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5)
+}
