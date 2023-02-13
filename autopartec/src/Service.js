@@ -63,4 +63,19 @@ export default class Service {
             });
         });
     }
+    static postFormData(type, userData) {
+        return new Promise((resolve, reject) => {
+        fetch(API_ROUTE + type + ".php", {
+            method: "POST",
+            body: userData,
+        })
+            .then((response) => response.json())
+            .then((res) => {
+            resolve(res);
+            })
+            .catch((error) => {
+            reject(error);
+            });
+        });
+    }
 }

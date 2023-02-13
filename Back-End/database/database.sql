@@ -25,7 +25,7 @@ create table usuario(
 );
 describe usuario;
 insert into usuario value 
-(1,'pepe','support@autopartec.com','Luevanos','Torres','Christofer Giovanny',1);
+(1,'pepe','support@autopartec.com','Torres','Luevanos','Christofer Giovanny',1);
 select * from usuario;
 create table info_usuario(
     id_info_usuario int    auto_increment,
@@ -68,7 +68,6 @@ create table articulo(
     id_articulo int auto_increment,
     id_modelo int not null,
     id_marca int not null,
-    id_talla int not null,
     nombre varchar(30) not null,
     imagen varchar(512),
     stock int not null,
@@ -130,7 +129,31 @@ create table articulo_carrito(
     foreign key(id_carrito) references carrito(id_carrito) on delete cascade on update cascade,
     foreign key(id_articulo) references articulo(id_articulo) on delete cascade on update cascade
 );
+CREATE TRIGGER modelo_insert_upper
+BEFORE INSERT
+ON modelo
+FOR EACH ROW
+SET NEW.modelo = UPPER(NEW.modelo);
 
+CREATE TRIGGER modelo_update_upper
+BEFORE UPDATE
+ON modelo
+FOR EACH ROW
+SET NEW.modelo = UPPER(NEW.modelo);
+CREATE VIEW view_articulo
+AS  
+    SELECT A.id_articulo,
+        A.nombre,
+        A.precio,
+        A.imagen,
+        A.stock,
+        M.modelo,
+        N.marca
+    FROM articulo AS A
+    INNER JOIN modelo AS m
+        ON A.id_modelo = M.id_modelo
+    INNER JOIN marca AS N
+        ON A.id_marca = N.id_marca;
 SELECT * FROM usuario u INNER JOIN tipo_usuario t WHERE u.id_tipo_usuario = t.id_tipo_usuario and u.id_usuario=1;
 SELECT * FROM articulo a INNER JOIN modelo m ON m.id_modelo=a.id_modelo INNER JOIN marca mr ON mr.id_marca=a.id_marca  WHERE a.id_articulo=1;
 alter table articulo modify imagen varchar(512);

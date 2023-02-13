@@ -5,20 +5,29 @@ import './styles/pageStyles.css';
 import Service from '../Service';
 
 function Dashboard() {
-    const [search, setSearch] = useState([]);
-    const [articles, setArticles] = useState
+    const [search, setSearch] = useState("");
+    const [articles, setArticles] = useState([]);
     const getSearch = (value) => {
         setSearch(value)
     }
     useEffect(()=>{
-        Service.getData("getArticulos").then((data)=>{
+        Service.getData("articulos/getFArticulos").then((data)=>{
             setArticles(data);
         });
     },[search]);
+    useEffect(()=>{
+        Service.getData("articulos/getArticulos").then((data)=>{
+            setArticles(data);
+        });
+    }, [])
     return (
-        <div>
+        <div className='dashboard'>
             <Header getSearch={getSearch}/>
             <p>{search}</p>
+            <div>
+                {articles.map(todo => 
+                    <div key={todo.id_articulo}>{todo.nombre}</div>)}
+            </div>
         </div>
     );
 }

@@ -1,0 +1,337 @@
+/*Registro*/
+.file{
+    /* visibility: hidden etc. wont work */
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.lb:hover{
+    background: #49a687;
+    color: #ffff !important;
+    border-radius: 5px;
+}
+.file:focus + label {
+    /* keyboard navigation */
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+.file + label * {
+    pointer-events: none;
+}
+.scroll{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.register-box {
+    width:35%;
+    padding: 40px;
+    background: rgb(77, 76, 76);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgb(0, 0, 0,.6);
+    border-radius: 10px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.register-box h2 {
+margin: 0 0 30px;
+padding: 0;
+color: #fff;
+text-align: center;
+}
+
+.register-box .user-box {
+position: relative;
+}
+
+.register-box .user-box input {
+width: 100%;
+padding: 10px 0;
+font-size: 16px;
+color: #fff;
+margin-bottom: 30px;
+border: none;
+border-bottom: 1px solid #fff;
+outline: none;
+background: transparent;
+}
+.register-box .user-box label {
+position: absolute;
+top:0;
+left: 0;
+padding: 10px 0;
+font-size: 16px;
+color: #fff;
+pointer-events: none;
+transition: .5s;
+}
+
+.register-box .user-box input:focus ~ label,
+.register-box .user-box input:valid ~ label {
+top: -20px;
+left: 0;
+color: #ffffff;
+font-size: 12px;
+}
+
+.register-box form button {
+position: relative;
+display: inline-block;
+padding: 10px 20px;
+color: #ffffff;
+font-size: 16px;
+text-decoration: none;
+text-transform: uppercase;
+overflow: hidden;
+transition: .5s;
+margin-top: 40px;
+letter-spacing: 4px;
+}
+
+.register-box button:hover {
+background: #49a687;
+color: #fff;
+border-radius: 5px;
+}
+
+.register-box button span {
+position: absolute;
+display: block;
+}
+/*Inicio de Sesion*/
+.btnin{
+    width: 50%;
+    text-align: center;
+    font-size: .8rem !important;
+}
+/*Perfil*/
+.btn {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+        -moz-appearance: none;
+            appearance: none;
+    background-color: transparent;
+    border: 2px solid #e74c3c;
+    border-radius: 0.6em;
+    color: #e74c3c;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+            align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 20px;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+.third {
+    border-color: #3498db;
+    color: white;
+    box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+}
+.third:hover {
+    color: rgb(34, 32, 32);
+    box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+}
+.cardPerfil{
+    flex:  1 1 20rem;
+    margin: 10px 20px;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0,0,.0,0.4);
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    align-self:unset;
+    flex-direction: column;
+    align-items:center;
+    border-radius: 12px 12px 12px 12px; 
+    display: flex;
+    width: 100%;
+    justify-content:center;
+    align-items: center;
+}
+.description{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.perfil-btn{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.description img{
+    width: 40%;
+    object-fit: contain;
+    border-radius: 12px 12px 12px 12px;
+}
+.info{
+    width: 55%;
+    margin-left: 5%;
+}
+/*Nosotros*/
+#map{
+    height: 500px;
+    width: 500px;
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(216, 216, 173);
+}
+.map{
+    height: 500px;
+    width: 500px;
+}
+.padre {
+    display: flex;
+justify-content: center;
+}
+.container{
+    top:50%;
+    width: 50%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.row{
+    display:flex;
+    align-items:flex-end;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+.card{
+    flex:  1 1 20rem;
+    margin: 10px 20px;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0,0,.0,0.4);
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    align-self:unset;
+    flex-direction: column;
+    align-items:center;
+    border-radius: 12px 12px 12px 12px; 
+}
+.card h4{
+    font-size: 1.3rem;
+    margin: 10px 0;
+    align-self: center;
+    text-align: justify;
+}
+.card h3{
+    font-size: 1.5rem;
+    margin: 10px 0;
+    align-self: center;
+    text-align: justify;
+    text-decoration: bold;
+}
+/*Dashboard*/
+.dashboard{
+}
+/*IniciarSesion*/
+
+.local{
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+}
+.login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgb(77, 76, 76);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgb(0, 0, 0,.6);
+    border-radius: 10px;
+}
+
+.login-box h2 {
+margin: 0 0 30px;
+padding: 0;
+color: #fff;
+text-align: center;
+}
+
+.login-box .user-box {
+position: relative;
+}
+
+.login-box .user-box input {
+width: 100%;
+padding: 10px 0;
+font-size: 16px;
+color: #fff;
+margin-bottom: 30px;
+border: none;
+border-bottom: 1px solid #fff;
+outline: none;
+background: transparent;
+}
+.login-box .user-box label {
+position: absolute;
+top:0;
+left: 0;
+padding: 10px 0;
+font-size: 16px;
+color: #fff;
+pointer-events: none;
+transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+top: -20px;
+left: 0;
+color: #ffffff;
+font-size: 12px;
+}
+
+.login-box form button {
+position: relative;
+display: inline-block;
+padding: 10px 20px;
+color: #ffffff;
+font-size: 16px;
+text-decoration: none;
+text-transform: uppercase;
+overflow: hidden;
+transition: .5s;
+margin-top: 40px;
+letter-spacing: 4px;
+}
+
+.login-box button:hover {
+background: #49a687;
+color: #fff;
+border-radius: 5px;
+}
+
+.login-box button span {
+position: absolute;
+display: block;
+}
+
+.alert-danger{
+color: rgb(253, 100, 100);
+}

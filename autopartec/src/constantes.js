@@ -1,1 +1,1 @@
-export const  API_ROUTE = "http://localhost/GlobalWeb/backend/restApiPHP/";
+export const  API_ROUTE = "http://localhost/GlobalWeb/back-end/restApiPHP/";
