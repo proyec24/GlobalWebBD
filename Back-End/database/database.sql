@@ -154,6 +154,24 @@ AS
         ON A.id_modelo = M.id_modelo
     INNER JOIN marca AS N
         ON A.id_marca = N.id_marca;
+CREATE VIEW view_usuario
+AS  
+    SELECT U.id_usuario,
+    	U.id_tipo_usuario,
+        U.nombres,
+        U.apellido_materno,
+        U.apellido_paterno,
+        U.contrasena,
+        U.correo,
+        U.imagen,
+        I.estado,
+        I.calle,
+        I.no_exterior,
+        I.colonia,
+        I.cp
+    FROM usuario AS U
+    INNER JOIN info_usuario AS I
+        ON U.id_usuario = I.id_usuario;
 SELECT * FROM usuario u INNER JOIN tipo_usuario t WHERE u.id_tipo_usuario = t.id_tipo_usuario and u.id_usuario=1;
 SELECT * FROM articulo a INNER JOIN modelo m ON m.id_modelo=a.id_modelo INNER JOIN marca mr ON mr.id_marca=a.id_marca  WHERE a.id_articulo=1;
 alter table articulo modify imagen varchar(512);
