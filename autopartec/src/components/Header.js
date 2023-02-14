@@ -80,7 +80,7 @@ export default function Header({getSearch}) {
                 }
                 {
                     logged.logeado?
-                    <a className='header-item' href='/carrito'>
+                    <a className='header-item' href='/compra'>
                         <p>
                             Carrito
                         </p>

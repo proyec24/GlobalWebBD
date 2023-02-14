@@ -1,3 +1,69 @@
+/*Gracias*/
+.gracias{
+    color: #1C658C;
+    font-size: 2vw;
+}
+/*Panel*/
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid #1C658C;
+}
+.btnin2{
+    width: 80%;
+    text-align: center;
+    font-size: .8rem !important;
+}
+.table-container{
+    margin-top: 5%;
+    width: 90%;
+    box-shadow: 0px 2px 20px 5px rgba(0,0,0,0.67);
+    -webkit-box-shadow: 0px 2px 20px 5px rgba(0,0,0,0.67);
+    -moz-box-shadow: 0px 2px 20px 5px rgba(0,0,0,0.67);
+}
+.dashboard3{
+    width: 100%;
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+    flex-direction: column;
+}
+thead th:nth-child(1) {
+width: 15%;
+}
+
+thead th:nth-child(2) {
+width: 15%;
+}
+
+thead th:nth-child(3) {
+width: 15%;
+}
+.buttonPanel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:row;
+}
+thead th:nth-child(4) {
+width: 15%;
+}
+thead th:nth-child(5) {
+width: 15%;
+}
+thead th:nth-child(6) {
+width: 15%;
+}
+
+td{
+    text-align: center;
+}
+
+th,
+td {
+padding: 20px;
+}
 /*Registro*/
 .file{
     /* visibility: hidden etc. wont work */

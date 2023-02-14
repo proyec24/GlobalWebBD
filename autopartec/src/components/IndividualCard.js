@@ -37,12 +37,11 @@ function IndividualCard ({ key,id ,name, stock, img,precio, modelo, marca }){
             cantidad_articulos:cantidad,
             total_articulo:cantidad*precio
         };
-        Service.postData("articulo/articulo_carrito",carrito).then((data)=>{
+        Service.postData("articulos/articulo_carrito",carrito).then((data)=>{
         })
     };
     const handleCantidad = event => {
-        setCantidad(cantidad+1);
-        
+        setCantidad(event.target.value);
     };
     return (
         <div className="CardContainer">
@@ -58,7 +57,7 @@ function IndividualCard ({ key,id ,name, stock, img,precio, modelo, marca }){
             {
             logged.logeado?
                 <div className="CardInput">
-                    <input type="number"  max={stock} onChange={handleCantidad} value={cantidad} min="0" ></input>
+                    <input type="number"  max={stock} onChange={handleCantidad} defaultValue="0" min="0" ></input>
                     <button onClick={handleAddCarrito}> Agregar</button>
                 </div>
             :
