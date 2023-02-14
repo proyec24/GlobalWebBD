@@ -5,6 +5,7 @@
     background-color: #1C658C;
     display: flex;
     position: sticky;
+    z-index: 2;
     top: 0;
     box-shadow: 1px 11px 17px -2px rgba(128,122,122,0.75);
     -webkit-box-shadow: 1px 11px 17px -2px rgba(128,122,122,0.75);
@@ -71,4 +72,78 @@
     -o-transform: scale(1.5);
     -ms-transform: scale(1.5);
     transform: scale(1.5)
+}
+/*CARDS*/
+.ContainerFlex {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 4rem 5vw;
+    padding: 0;
+    list-style-type: none;
+}
+.CardContainer {
+    width: 20rem;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: scale 0.5s ease-in-out;
+    z-index: 1;
+}
+.CardInput{
+    width: 100%;
+    height: 100%;
+    
+    font-size: 1.02rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.CardInput input{
+    width: 60%;
+    height: 95%;
+    border: none;
+    color: white;
+    background-color: rgb(61, 71, 80);
+}
+.CardInput button{
+    width: 40%;
+    height: 100%;
+    color: white;
+    border: none;
+    background-color: rgb(61, 71, 80);
+}
+.CardContainer:hover {
+    scale: 1.03;
+    transition: scale 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.CardImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    width: 100%;
+}
+
+.CardInfo {
+    height: 50%;
+    color: white;
+    background-color: rgb(61, 71, 80);
+    font-size: 1.02rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#info {
+    margin: 6% 6% 0;
+}
+
+.FixImg{
+    width: 100%;
 }

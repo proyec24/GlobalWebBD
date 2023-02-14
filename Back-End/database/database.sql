@@ -19,13 +19,14 @@ create table usuario(
     apellido_materno varchar(30) not null,
     apellido_paterno varchar(30) not null,
     nombres varchar(30) not null,
+    imagen varchar(100),
     id_tipo_usuario int not null,
     primary key(id_usuario), 
     foreign key(id_tipo_usuario) references tipo_usuario(id_tipo_usuario) on delete cascade on update cascade
 );
 describe usuario;
 insert into usuario value 
-(1,'pepe','support@autopartec.com','Torres','Luevanos','Christofer Giovanny',1);
+(1,'pepe','support@autopartec.com','Torres','Luevanos','Christofer Giovanny',"http://localhost/globalweb/Back-end/restApiPHP/img/user_images/Christofer.jpg",1);
 select * from usuario;
 create table info_usuario(
     id_info_usuario int    auto_increment,
@@ -150,10 +151,11 @@ AS
         M.modelo,
         N.marca
     FROM articulo AS A
-    INNER JOIN modelo AS m
+    INNER JOIN modelo AS M
         ON A.id_modelo = M.id_modelo
     INNER JOIN marca AS N
-        ON A.id_marca = N.id_marca;
+        ON A.id_marca = N.id_marca
+        GROUP BY A.id_articulo;
 CREATE VIEW view_usuario
 AS  
     SELECT U.id_usuario,
@@ -172,6 +174,12 @@ AS
     FROM usuario AS U
     INNER JOIN info_usuario AS I
         ON U.id_usuario = I.id_usuario;
+DELIMITER //
+CREATE PROCEDURE update_user(IN sid_usuario INT,IN snombres varchar(30),IN sapellido_materno varchar(30),IN sapellido_paterno varchar(30), IN scorreo varchar(30),IN scontrasena varchar(30)) BEGIN UPDATE usuario  SET nombres=snombres, apellido_materno=sapellido_materno, apellido_paterno=sapellido_paterno, correo=scorreo, contrasena=scontrasena  WHERE id_usuario=sid_usuario; END;;; 
+//
+DELIMITER //
+CREATE PROCEDURE update_more(IN sid_usuario INT,IN sestado varchar(30),IN scalle varchar(20),IN scolonia varchar(20), IN sno_exterior smallint ,IN scp INT) BEGIN UPDATE info_usuario  SET  estado=sestado, calle=scalle, colonia=scolonia, no_exterior=sno_exterior, cp=scp WHERE id_usuario=sid_usuario; END;;; 
+//
 SELECT * FROM usuario u INNER JOIN tipo_usuario t WHERE u.id_tipo_usuario = t.id_tipo_usuario and u.id_usuario=1;
 SELECT * FROM articulo a INNER JOIN modelo m ON m.id_modelo=a.id_modelo INNER JOIN marca mr ON mr.id_marca=a.id_marca  WHERE a.id_articulo=1;
 alter table articulo modify imagen varchar(512);

@@ -13,6 +13,7 @@ export default function Header({getSearch}) {
         apellido_paterno:"",
         apellido_materno:"",
         img:"",
+        id_carrito:""
     })
     const lupa = require('./img/lupa-de-busqueda.png');
     useEffect(() => {
@@ -77,6 +78,18 @@ export default function Header({getSearch}) {
                         </p>
                     </a>
                 }
+                {
+                    logged.logeado?
+                    <a className='header-item' href='/carrito'>
+                        <p>
+                            Carrito
+                        </p>
+                    </a>
+                    :
+                    <p>
+
+                    </p>
+                }
                 {logged.id_tipo_usuario==1 ?
                     <a className='header-item' href='/admin'>
                         <p>
@@ -88,6 +101,7 @@ export default function Header({getSearch}) {
                         
                     </p>
                 }
+                
             </div>
         </div>
     );

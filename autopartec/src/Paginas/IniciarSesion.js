@@ -20,6 +20,7 @@ function IniciarSesion() {
         apellido_paterno:"",
         apellido_materno:"",
         img:"",
+        id_carrito:"",
         logeado:false
     });
     const handleEmail = event => {
@@ -84,7 +85,7 @@ function IniciarSesion() {
                 Service.postData("usuario/iniciarSesion",user).then((data)=>{
                     let userF={...user,
                         id_tipo_usuario:data.id_tipo_usuario,
-                        id_usuario:data.id_tipo_usuario,
+                        id_usuario:data.id_usuario,
                         logeado:true,
                         nombres:data.nombres,
                         apellido_paterno:data.apellido_materno,

@@ -127,11 +127,8 @@ function Editar() {
     };
     let id_register=0;
     const handleRegister = event => {
-        Service.postData("usuario/update",user).then((data)=>{
-            Service.postData("usuario/update_more",user).then((data)=>{
-                
-                navigate("/Perfil");
-            })
+        Service.postData("usuario/usuario_update",user).then((data)=>{
+            
         })
         
     };

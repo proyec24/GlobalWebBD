@@ -17,6 +17,7 @@ function Registro() {
         apellido_materno:"",
         img:[],
         imgName:"",
+        id_carrito:"",
         logeado:false
     });
     const [moreInfo, setMore] = useState ({
@@ -181,6 +182,8 @@ function Registro() {
             Service.postFormData("usuario/user_image",registro).then((data)=>{
             })
             Service.postData("usuario/register_more",moreTemp).then((data)=>{
+            })
+            Service.postData("usuario/create_carrito",moreTemp).then((data)=>{
                 navigate("/login");
             })
         })
