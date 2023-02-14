@@ -40,19 +40,6 @@ export default function Header({getSearch}) {
                 </p>
             </div>
             <div className='header-search'>
-                <input 
-                type="text" 
-                id='search' 
-                className='header-input' 
-                placeholder='Que producto buscas...' 
-                >
-
-                </input>
-                <button 
-                className='header-button' 
-                onClick={()=>getSearch(document.getElementById("search").value)}>
-                    <img src={lupa} />
-                </button>
             </div>
             <div className='header-menu'>
                 <a className='header-item' href='/nosotros'>
