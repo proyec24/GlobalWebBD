@@ -70,7 +70,7 @@ create table articulo(
     id_modelo int not null,
     id_marca int not null,
     nombre varchar(30) not null,
-    imagen varchar(512),
+    imagen varchar(100),
     stock int not null,
     precio decimal not null,
     primary key(id_articulo),
@@ -115,7 +115,6 @@ alter table detalle_pedido add foreign key(no_orden) references pedido(id_pedido
 create table carrito(
     id_carrito int auto_increment,
     id_usuario int not null,
-    precio_total float not null,
     primary key(id_carrito),
     foreign key(id_usuario) references usuario(id_usuario) on delete cascade on update cascade
 );

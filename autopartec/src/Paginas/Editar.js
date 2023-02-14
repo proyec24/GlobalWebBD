@@ -127,8 +127,32 @@ function Editar() {
     };
     let id_register=0;
     const handleRegister = event => {
-        Service.postData("usuario/usuario_update",user).then((data)=>{
-            
+        Service.postData("usuario/usuario_update",user).then((res)=>{
+            Service.postData("usuario/obtenerUsuario",user).then((data)=>{
+                sessionStorage.clear();
+                localStorage.removeItem("more");
+                let userTemp={
+                    id_tipo_usuario:data[0].id_tipo_usuario,
+                    id_usuario:data[0].id_usuario,
+                    logeado:true,
+                    nombres:data[0].nombres,
+                    correo:data[0].correo,
+                    contrasena:data[0].correo,
+                    apellido_paterno:data[0].apellido_materno,
+                    apellido_materno:data[0].apellido_paterno,
+                    img:data[0].imagen,
+                }
+                sessionStorage.setItem("user",JSON.stringify( userTemp));
+                let moreTemp={
+                    estado:data[0].estado,
+                    calle:data[0].calle,
+                    no_exterior:data[0].no_exterior,
+                    colonia:data[0].colonia,
+                    cp:data[0].cp,
+                }
+                localStorage.setItem("more",JSON.stringify(moreTemp));
+                navigate('/perfil');
+            })
         })
         
     };

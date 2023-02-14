@@ -8,9 +8,9 @@ function Nosotros() {
     return (
         <div className='dashboard'>
             <Header2/>
-            <div class="container">
-                <div class="row">
-                    <div class="card">
+            <div className="container">
+                <div className="row">
+                    <div className="card">
                         <h3><b>¿Quienes Somos?</b></h3>
                         <h4>
                             Autopartec es una empresa orgullosamente mexicana,
@@ -22,9 +22,9 @@ function Nosotros() {
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="card">
+            <div className="container">
+                <div className="row">
+                    <div className="card">
                         <h3><b>Mision</b></h3>
                         <h4>
                             Ser la empresa número uno en el mercado del cuidado vehicular, 
@@ -37,9 +37,9 @@ function Nosotros() {
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="card">
+            <div className="container">
+                <div className="row">
+                    <div className="card">
                         <h3><b>Vision</b></h3>
                         <h4>
                             Brindar un servicio de calidad, 
@@ -49,9 +49,9 @@ function Nosotros() {
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="card">
+            <div className="container">
+                <div className="row">
+                    <div className="card">
                     <h3><b>Ubicacion</b></h3>
                         <h4>
                             Nos encontramos en la direccion: Santa Martha

@@ -13,7 +13,7 @@ $total = $params ->total;
 $id = $params ->idusuario;
 $correo = $params ->correo;
 $timestamp = date("Y-m-d H:i:s");
-$query = "INSERT INTO pedido VALUES (NULL, $id,$total_articulos,$total,'$timestamp',2)";
+$query = "INSERT INTO pedido VALUES (NULL, $id,$total_articulos,$total,'$timestamp',1)";
 $usuarios = $db->insert($query);
 $total2=0;
 foreach($articulos as $element){
@@ -36,9 +36,8 @@ $pdf->SetTitle('Pedido');
 
 // set font for the content
 $pdf->SetFont('helvetica', '', 10);
-var_dump($correo);
 foreach ($articulos as $element) {
-    $precio = $element->cantidad_articulos*$p->precio;
+    $precio = $element->cantidad_articulos*$element->precio;
     $pdf->Cell(40,10, 'Nombre:'.$element->nombre, 1, 1);
     $pdf->Cell(40,10, 'Precio unitario: ' . $element->precio, 1, 1);
     $pdf->Cell(40,10, 'Cantidad: ' . $element->cantidad_articulos, 1, 1);

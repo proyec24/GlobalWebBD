@@ -63,6 +63,7 @@ function Agregar() {
             let registro = new FormData();
             registro.append("articulo",articulo.img[0]);
             Service.postFormData("articulos/agregarImg",registro).then((data)=>{
+                navigate("/admin")
             })
         })
         
