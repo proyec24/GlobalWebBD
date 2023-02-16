@@ -137,7 +137,7 @@ function Editar() {
                     logeado:true,
                     nombres:data[0].nombres,
                     correo:data[0].correo,
-                    contrasena:data[0].correo,
+                    contrasena:data[0].contrasena,
                     apellido_paterno:data[0].apellido_materno,
                     apellido_materno:data[0].apellido_paterno,
                     img:data[0].imagen,

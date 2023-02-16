@@ -68,6 +68,7 @@ function Compras() {
                             <th>Marca</th>
                             <th>Precio</th>
                             <th>Cantidad</th>
+                            <th>Cantidad</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -79,6 +80,7 @@ function Compras() {
                                     <td>{article.modelo}</td>
                                     <td>{article.marca}</td>
                                     <td>{article.precio}</td>
+                                    <td>{article.cantidad_articulos}</td>
                                     <td>{article.cantidad_articulos}</td>
                                 </tr>
                             )
