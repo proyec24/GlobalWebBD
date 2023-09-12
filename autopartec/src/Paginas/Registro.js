@@ -297,15 +297,16 @@ function Registro() {
                         </div>
                     </div>
                     <div className='perfil-btn'>
-                        <button className='btn third btnin' onClick={handleRegister}>
-                            Registrarse 
-                        </button>
-                        <label htmlFor="img" className='btn third btnin lb'>Imagen</label>
-                        <input className='file' type="file" onChange={handleUser} id="img" value={""} name="img" required />
+                    <input className='file' type="file" onChange={handleUser} id="img" value={""} name="img" required />
                         <div
                             id='alert1'
                             className="alert-danger"
                         ></div>
+                        <button className='btn third btnin' onClick={handleRegister} >
+                            Registrarse
+                        </button>
+                        <label htmlFor="img" className='btn third btnin lb'>Imagen</label>
+                        
                     </div>
                 </div>
             </div>
